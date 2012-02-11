@@ -18,6 +18,26 @@ Memory: CM7 >= 6G, CM9 >= 15G
 * /data/androidsdk -- Full android SDK
 * /usr/local/bin -- All binaries for x86 that are compiled by CM7
 
+Contents of /data/android/git
+-----------------------------
+
+# ls /data/android/git
+
+android
+android_bootable_recovery
+android_device_htc_click
+android_device_htc_leo
+android_device_htc_leo_CM
+android_device_samsung_c1-common
+android_device_samsung_galaxys2
+android-scripts
+android_vendor_htc_click
+android_vendor_htc_leo
+CM
+CM-ics
+Team-Win-Recovery-Project
+TWRP2
+twrp2_galaxys2_initramfs
 
 
 

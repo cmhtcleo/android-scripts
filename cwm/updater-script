@@ -1,0 +1,33 @@
+ui_print("ClockworkMod Recovery for HD2");
+ui_print("");
+ui_print("Presented by arif-ali, seadersn at xda-developers");
+ui_print("");
+
+show_progress(0.3, 0);
+
+ui_print("Writing recovery partition...");
+format("MTD", "recovery");
+assert(package_extract_file("recovery_leo.img", "/tmp/recovery.img"),
+  write_raw_image("/tmp/recovery.img", "recovery"),
+  delete("/tmp/recovery.img"));
+
+show_progress(0.3, 10);
+
+ui_print("Changing version of CWM");
+
+mount("MTD","userdata","/data");
+mount("MTD","system","/system");
+mount("auto","/dev/block/mmcblk0p2","/sd-ext");
+package_extract_file("change_version.sh","/tmp/change_version.sh");
+set_perm(0, 0, 0777,"/tmp/change_version.sh");
+run_program("/tmp/change_version.sh");
+delete("/tmp/sqlite3");
+delete("/tmp/change_version.sh");
+
+unmount("/sd-ext");
+unmount("/data");
+unmount("/system");
+
+show_progress(0.3, 10);
+
+ui_print("All done.");
