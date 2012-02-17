@@ -117,6 +117,6 @@ upload()
 }
 
 compile leo
-#upload leo
-#compile click
-#upload click
+upload leo
+compile click
+upload click
