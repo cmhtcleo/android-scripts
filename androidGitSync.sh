@@ -10,7 +10,7 @@ do
   if [[ -d $file ]] ; then
     pushd $file
 
-    if [[ "$file" == "CM" ]] || [[ "$file" == "aosp"  ]]; then
+    if [[ "$file" == "CM" ]] || [[ "$file" == "aosp"  ]] || [[ "$file" == "CM-ics" ]]; then
       /data/bin/repo sync -j 5 -f
       /data/bin/repo sync -j 5 -f
       /data/bin/repo sync -j 5 -f

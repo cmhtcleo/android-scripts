@@ -8,7 +8,7 @@ for VERSION in `echo $VERSIONS` ; do
 
 MARCDIR=marc1706_cm_${VERSION}
 KERNEL=$PWD/$MARCDIR/boot/zImage
-INITRD=/data/android/leo/CM/misc/kernels/ramdisk.img
+INITRD=/data/android/leo/kernels/ramdisk.img
 DATE=`date +%Y%m%d`
 
 rm -rf $MARCDIR

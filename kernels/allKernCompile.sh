@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp /data/android/leo/CM/source/out/target/product/leo/ramdisk.img .
+cp /data/android/CM/source/out/target/product/leo/ramdisk.img /data/android/leo/kernels/
 
 for kernel in `echo charan marc tytung rafpigna`
 do

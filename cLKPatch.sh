@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KERNEL=/data/android/git/android_device_htc_leo_cm/prebuilt/kernel
-INITRD=/data/android/leo/CM/source/out/target/product/leo/ramdisk.img
+KERNEL=/data/android/git/android_device_htc_leo/prebuilt/kernel
+INITRD=/data/android/CM/source/out/target/product/leo/ramdisk.img
 DATE=`date +%m%d%Y`
 
 mkbootimg --kernel $KERNEL --ramdisk $INITRD --cmdline "console=null" --base 0x11800000 -o cLK/boot.img

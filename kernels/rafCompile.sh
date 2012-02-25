@@ -7,7 +7,7 @@ do
 
 RAFDIR=kernel_rafpigna_${VERSION}_GB
 KERNEL=$PWD/$RAFDIR/boot/zImage
-INITRD=/data/android/leo/CM/source/out/target/product/leo/ramdisk.img
+INITRD=/data/android/leo/kernels/ramdisk.img
 DATE=`date +%Y%m%d`
 
 rm -rf $RAFDIR

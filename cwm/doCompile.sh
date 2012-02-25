@@ -1,15 +1,13 @@
 #!/bin/bash
 
 RECOVERY_URL=git://github.com/CyanogenMod/android_bootable_recovery.git
-#LEO_URL=git://github.com/CyanogenMod/android_device_htc_leo.git
-
-#RECOVERY_DIR=/data/android/git/android_bootable_recovery
-#LEO_DIR=/data/android/git/android_device_htc_leo
 CM_DIR=/data/android/git/CM-ics
 
 WORKDIR=/data/android/recovery
 OUTPUT=$WORKDIR/out
 SOURCE=$WORKDIR/source
+
+numProcs=$(( `cat /proc/cpuinfo  | grep processor | wc -l` + 1 ))
 
 mkdir -p $OUTPUT
 mkdir -p $SOURCE
@@ -48,7 +46,7 @@ clean()
   echo -n "Cleaning up ... "
   pushd $SOURCE > /dev/null 2>&1
   rm -rf $OUTPUT/*
-  make -j2 clean dataclean installclean > /dev/null 2>&1
+  make -j ${numProcs} clean dataclean installclean > /dev/null 2>&1
   rm -rf * > /dev/null 2>&1
   popd > /dev/null 2>&1
   echo "DONE"
@@ -80,9 +78,9 @@ compile()
   lunch cm_${device}-eng > /dev/null 2>&1
   echo -n "compiling recovery ... "
   if [[ $manufacturer == "samsung" ]] ; then
-    make -j 5 bootimage
+    make -j ${numProcs} bootimage
   else
-    make -j 5 recoveryimage 2>&1 | tail -n 10
+    make -j ${numProcs} recoveryimage 2>&1 | tail -n 10
   fi
   echo "DONE"
   
