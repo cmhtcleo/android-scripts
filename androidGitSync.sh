@@ -3,7 +3,7 @@
 WORKDIR=/data/android/git
 
 cd $WORKDIR
-rm -rf CM-gerrit
+#rm -rf CM-gerrit
 
 for file in `ls`
 do

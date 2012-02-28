@@ -126,7 +126,7 @@ cat > $WORKDIR/RM/new.js << EOF
    },
    {
     "name": "dtapps2sd 2.7.5.3b4",
-    "urls": ["http://cyanogenmod.arif-ali.co.uk/misc/dtapps2sd-2.7.5.3-beta04-signed.zip"]
+    "urls": ["http://cyanogenmod.arif-ali.co.uk/misc/dtapps2sd-2.7.5.3-beta04-cm.zip"]
    },
    {
     "name": "3rd Party",
