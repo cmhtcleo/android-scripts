@@ -3,6 +3,9 @@
 export manufacturer=$1
 export device=$2
 
+export BUILD_NO=$BUILD_NUMBER
+unset BUILD_NUMBER
+
 WORKDIR=$WORKSPACE
 OUTPUT=$WORKDIR
 SOURCE=$WORKDIR/source
