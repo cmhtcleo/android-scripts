@@ -42,7 +42,7 @@ make -j ${numProcs} bacon
 
 mkdir -p $OUTPUT
 
-cp out/target/product/${device}/cyanogen_${device}-ota-${BUILD_NUMBER}.zip $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip
+cp out/target/product/${device}/updates*.zip* $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip
 
 cd $WORKSPACE
 rm -rf $SOURCE
