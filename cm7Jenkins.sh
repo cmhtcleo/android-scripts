@@ -22,16 +22,16 @@ if [[ ${device} = "leo" ]] ; then
   sed -i s/developerid=cyanogenmodnightly/developerid=cyanogenmodleonightly/g vendor/cyanogen/products/common.mk
 
   # To make it for only cLK
-  sed -i &apos;s/\(^TARGET_CUSTOM_RELEASETOOL.*\)/#\1/g&apos; device/htc/${device}/BoardConfig.mk
+  sed -i 's/\(^TARGET_CUSTOM_RELEASETOOL.*\)/#\1/g' device/htc/${device}/BoardConfig.mk
 fi
 
 cp ./vendor/cyanogen/products/cyanogen_${device}.mk buildspec.mk
 
 echo &quot;Getting ROMManager&quot;
 ./vendor/cyanogen/get-rommanager
-echo -n &quot;setting up environment ... &quot;
-. build/envsetup.sh &gt; /dev/null 2&gt;&amp;1
-echo -n &quot;running brunch ... &quot;
+echo -n "setting up environment ... "
+. build/envsetup.sh > /dev/null 2>&1
+echo -n "running brunch ... "
 lunch cyanogen_${device}-eng
 
 make -j ${numProcs} bootimage
