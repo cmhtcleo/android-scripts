@@ -27,7 +27,7 @@ fi
 
 cp ./vendor/cyanogen/products/cyanogen_${device}.mk buildspec.mk
 
-echo &quot;Getting ROMManager&quot;
+echo "Getting ROMManager"
 ./vendor/cyanogen/get-rommanager
 echo -n "setting up environment ... "
 . build/envsetup.sh > /dev/null 2>&1
