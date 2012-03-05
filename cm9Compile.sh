@@ -118,5 +118,3 @@ upload()
 
 compile leo
 upload leo
-compile click
-upload click

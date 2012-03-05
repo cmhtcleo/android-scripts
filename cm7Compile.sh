@@ -184,7 +184,6 @@ doPatches()
 
 clean
 
-devices="htc_leo samsung_galaxys2 htc_click"
 devices="htc_leo"
 
 for phone in `echo $devices`
