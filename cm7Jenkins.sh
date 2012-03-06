@@ -16,6 +16,12 @@ date3=`date +%m-%d-%Y`
 
 numProcs=$(( `cat /proc/cpuinfo  | grep processor | wc -l` + 1 ))
 
+checkStatus()
+{
+  STAT=$?
+  [[ $STAT -ne 0 ]] && exit $STAT
+}
+
 cd $SOURCE
 
 export CYANOGEN_NIGHTLY=1
@@ -32,13 +38,18 @@ cp ./vendor/cyanogen/products/cyanogen_${device}.mk buildspec.mk
 
 echo "Getting ROMManager"
 ./vendor/cyanogen/get-rommanager
+checkStatus 
 echo -n "setting up environment ... "
-. build/envsetup.sh > /dev/null 2>&1
+. build/envsetup.sh
+checkStatus 
 echo -n "running brunch ... "
 lunch cyanogen_${device}-eng
+checkStatus 
 
 make -j ${numProcs} bootimage
+checkStatus 
 make -j ${numProcs} bacon
+checkStatus 
 
 mkdir -p $OUTPUT
 
@@ -46,7 +57,11 @@ cp out/target/product/${device}/update*.zip $OUTPUT/update-cm7-${device}-${BUILD
 
 if [[ $UPLOAD = "true" ]] ; then
   scp $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip arif-ali.co.uk:cmleonightly/rom
+  checkStatus 
 fi
 
 cd $WORKSPACE
 rm -rf $SOURCE
+checkStatus
+
+exit 0
