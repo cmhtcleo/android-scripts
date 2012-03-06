@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export manufacturer=$1
-export device=$2
+export device=$1
 
 export BUILD_NO=$BUILD_NUMBER
 unset BUILD_NUMBER
