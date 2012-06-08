@@ -118,7 +118,7 @@ cat > $WORKDIR/RM/new.js << EOF
   "incremental": "${date1}",
   "name": "CM7 - Build #${date1}",
   "urls": ["http://cyanogenmod.arif-ali.co.uk/rom/update-cm7-leo-${date1}.zip",
-           "http://http://goo.im/devs/cmhtcleo/cm7/update-cm7-leo-${date1}.zip"],
+           "http://goo.im/devs/cmhtcleo/cm7/update-cm7-leo-${date1}.zip"],
   "device": "leo",
   "label": "CM-7",
   "addons": [{
