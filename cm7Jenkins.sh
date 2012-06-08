@@ -56,6 +56,7 @@ cp out/target/product/${device}/update*.zip $OUTPUT/update-cm7-${device}-${BUILD
 
 if [[ $UPLOAD = "true" ]] ; then
   scp $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip arif-ali.co.uk:cmleonightly/rom
+  scp $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip cmhtcleo@upload.goo.im:public_html/cm7
   checkStatus 
 fi
 

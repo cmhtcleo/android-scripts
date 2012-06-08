@@ -99,6 +99,7 @@ upload()
      echo "\$ uploadnightly ${device} ${date1} " | ftp cmleonightly1.co.cc
   fi
   rsync -az update-cm7-${device}-${date1}.zip arif-ali.co.uk:cmleonightly/rom/.
+  rsync -az update-cm7-${device}-${date1}.zip upload.goo.im:public_html/cm7/.
   popd
 }
 
@@ -117,7 +118,7 @@ cat > $WORKDIR/RM/new.js << EOF
   "incremental": "${date1}",
   "name": "CM7 - Build #${date1}",
   "urls": ["http://cyanogenmod.arif-ali.co.uk/rom/update-cm7-leo-${date1}.zip",
-           "http://cmleonightly1.co.cc/rom/update-cm7-leo-${date1}.zip"],
+           "http://http://goo.im/devs/cmhtcleo/cm7/update-cm7-leo-${date1}.zip"],
   "device": "leo",
   "label": "CM-7",
   "addons": [{

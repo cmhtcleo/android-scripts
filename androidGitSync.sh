@@ -22,9 +22,9 @@ do
   fi
 done
 
-cp -al CM CM-gerrit
+#cp -al CM CM-gerrit
 cd CM-gerrit
-repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
+#repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
 repo sync -j 5 -f
 repo sync -j 5 -f
 repo sync -j 5 -f
