@@ -36,8 +36,8 @@ fi
 cp ./vendor/cyanogen/products/cyanogen_${device}.mk buildspec.mk
 
 # Copying the latest kernel stuff from the automated jenkins build
-cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/boot/zImage ./device/htc/leo/kernel
-cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/system/lib/modules/* ./device/htc/leo/modules/.
+cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/boot/zImage ./device/htc/leo/prebuilt/kernel
+cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/system/lib/modules/* ./device/htc/leo/prebuilt/modules/.
 
 echo "Getting ROMManager"
 ./vendor/cyanogen/get-rommanager
