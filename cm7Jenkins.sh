@@ -35,9 +35,11 @@ fi
 
 cp ./vendor/cyanogen/products/cyanogen_${device}.mk buildspec.mk
 
-# Copying the latest kernel stuff from the automated jenkins build
-cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/boot/zImage ./device/htc/leo/prebuilt/kernel
-cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/system/lib/modules/* ./device/htc/leo/prebuilt/modules/.
+if [[ $device = "leo" ]] ; then
+  # Copying the latest kernel stuff from the automated jenkins build
+  cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/boot/zImage ./device/htc/leo/prebuilt/kernel
+  cp ~jenkins/workspace/leo_kernel_gb/android_kernel_cmhtcleo-out/system/lib/modules/* ./device/htc/leo/prebuilt/modules/.
+fi
 
 echo "Getting ROMManager"
 ./vendor/cyanogen/get-rommanager
@@ -56,11 +58,11 @@ checkStatus
 
 mkdir -p $OUTPUT
 
-cp out/target/product/${device}/cm-7-*.zip $OUTPUT/cm-7-${device}-${BUILD_ID}.zip
+cp out/target/product/${device}/cm-7-*.zip $OUTPUT/.
 
 if [[ $UPLOAD = "true" ]] ; then
-  scp $OUTPUT/cm-7-${device}-${BUILD_ID}.zip arif-ali.co.uk:cmleonightly/rom
-  scp $OUTPUT/cm-7-${device}-${BUILD_ID}.zip cmhtcleo@upload.goo.im:public_html/cm7
+  scp $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip arif-ali.co.uk:cmleonightly/rom
+  scp $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip cmhtcleo@upload.goo.im:public_html/cm7
   checkStatus 
 fi
 
