@@ -56,11 +56,11 @@ checkStatus
 
 mkdir -p $OUTPUT
 
-cp out/target/product/${device}/update*.zip $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip
+cp out/target/product/${device}/cm-7-*.zip $OUTPUT/cm-7-${device}-${BUILD_ID}.zip
 
 if [[ $UPLOAD = "true" ]] ; then
-  scp $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip arif-ali.co.uk:cmleonightly/rom
-  scp $OUTPUT/update-cm7-${device}-${BUILD_ID}.zip cmhtcleo@upload.goo.im:public_html/cm7
+  scp $OUTPUT/cm-7-${device}-${BUILD_ID}.zip arif-ali.co.uk:cmleonightly/rom
+  scp $OUTPUT/cm-7-${device}-${BUILD_ID}.zip cmhtcleo@upload.goo.im:public_html/cm7
   checkStatus 
 fi
 
