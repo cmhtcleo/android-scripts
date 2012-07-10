@@ -58,7 +58,7 @@ checkStatus
 
 mkdir -p $OUTPUT
 
-cp out/target/product/${device}/cm-7-*.zip $OUTPUT/.
+cp source/out/target/product/${device}/cm-7-*.zip $OUTPUT/.
 
 if [[ $UPLOAD = "true" ]] ; then
   scp $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip arif-ali.co.uk:cmleonightly/rom
