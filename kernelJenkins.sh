@@ -6,7 +6,7 @@ export K_SRC=$K_ROOT/$NAME
 export K_WORK=$K_SRC-work
 export K_OUTPUT=$K_SRC-out
 export ARCH=arm
-export CROSS_COMPILE=/data/android/toolchain/arm-2011.03/bin/arm-none-eabi-
+export CROSS_COMPILE=/data/android/toolchain/arm-2010q1/bin/arm-none-eabi-
 export INSTALL_MOD_PATH=$K_OUTPUT/system/lib/modules
 
 # Clean any previous directories
