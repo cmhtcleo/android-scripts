@@ -61,7 +61,7 @@ mkdir -p $OUTPUT
 cp $SOURCE/out/target/product/${device}/cm-7-*.zip $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip
 
 if [[ $UPLOAD = "true" ]] ; then
-  scp $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip arif-ali.co.uk:cmleonightly/rom
+  scp_arif_domain $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip public_html/cyanogenmod/rom
   scp $OUTPUT/cm-7-${date1}-NIGHTLY-${device}.zip cmhtcleo@upload.goo.im:public_html/cm7
   checkStatus 
 fi
