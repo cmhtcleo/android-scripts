@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="cmhtcleo/android_device_htc_leo" path="device/htc/leo" />
+  <project name="cmhtcleo/android_vendor_htc_leo" path="vendor/htc/leo" />
+  <project name="cmhtcleo/android_kernel_cmhtcleo" path="kernel/htc/leo" />
+  <project name="tytung/android_hardware_gpsshim" path="hardware/gpsshim" revision="gingerbread" />
+  <project name="tytung/android_hardware_leo_libgps" path="device/htc/leo/libgps" revision="master" />
+</manifest>

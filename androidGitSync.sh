@@ -10,12 +10,12 @@ do
   if [[ -d $file ]] ; then
     pushd $file
 
-    if [[ "$file" == "CM" ]] || [[ "$file" == "aosp"  ]] || [[ "$file" == "CM-ics" ]]; then
+    if [[ `echo $file | grep '\-gerrit$'` ]]; then
       /data/bin/repo sync -j 5 -f
       /data/bin/repo sync -j 5 -f
       /data/bin/repo sync -j 5 -f
-    else
-      git pull
+    #else
+      #git pull
     fi
 
     popd
@@ -23,9 +23,9 @@ do
 done
 
 #cp -al CM CM-gerrit
-cd CM-gerrit
+#cd CM-gerrit
 #repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
-repo sync -j 5 -f
-repo sync -j 5 -f
-repo sync -j 5 -f
-cd -
+#repo sync -j 5 -f
+#repo sync -j 5 -f
+#repo sync -j 5 -f
+#cd -
